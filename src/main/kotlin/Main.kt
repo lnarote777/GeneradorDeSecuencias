@@ -5,21 +5,10 @@ package org.example
 fun main() {
     val consola = Consola()
     val generadorSecuencias = GeneradorSecuencias(consola)
+    val menu = Menu(generadorSecuencias, consola)
 
-    var numPalabras = consola.leerNumero("Introduzca el número de palabras de la frase: ")
+    menu.fraseIncremental()
+    menu.fraseFinal()
 
-    if (numPalabras != null) {
-        generadorSecuencias.fraseIncremental(numPalabras)
-    }else{
-        consola.mostrar("Entrada inválida.", true)
-    }
-
-    numPalabras = consola.leerNumero("Introduzca el número de palabras de la frase: ")
-
-    if (numPalabras != null) {
-        generadorSecuencias.fraseFinal(numPalabras)
-    }else{
-        consola.mostrar("Entrada inválida.", true)
-    }
 
 }
